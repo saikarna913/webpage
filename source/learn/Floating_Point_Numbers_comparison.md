@@ -12,13 +12,12 @@ Here’s an example of how to use a tolerance value in Fortran:
 ### Example: Using Tolerance
 ```fortran
 real(dp) :: tol
-tol = 10 * epsilon(1.0_dp)
-
-real(dp), parameter :: tol = 1.0e-10_dp
+tol = 10 * epsilon(1.0_dp)  ! epsilon returns the smallest number such that 1.0 + epsilon > 1.0
+    
 if (abs(x - y) < tol) then
-   print *, "Effectively Equal"
+    print *, "Effectively Equal"
 else
-   print *, "Not Equal"
+    print *, "Not Equal"
 end if
 ```
 
